@@ -1,2 +1,3 @@
 # vertx-experiments
-Experiements code snippets with Vert.x
+
+Experiments code snippets with Vert.x
