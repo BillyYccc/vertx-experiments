@@ -4,9 +4,9 @@ import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 
 /**
+ * An asynchronous dummy client which executes async methods and returns {@code ListenableFuture}.
+ *
  * @author Billy Yuan <billy112487983@gmail.com>
- * <p>
- * An asynchronous dummy client.
  */
 
 public class DummyClient {
