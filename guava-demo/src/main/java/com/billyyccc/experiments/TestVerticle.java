@@ -1,4 +1,4 @@
-package com.billyyccc.experiments.guava.demo;
+package com.billyyccc.experiments;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;

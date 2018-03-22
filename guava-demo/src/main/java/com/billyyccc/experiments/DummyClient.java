@@ -1,4 +1,4 @@
-package com.billyyccc.experiments.guava.demo;
+package com.billyyccc.experiments;
 
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;

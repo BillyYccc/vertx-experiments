@@ -1,4 +1,4 @@
-package com.billyyccc.experiments.guava.demo;
+package com.billyyccc.experiments;
 
 import com.google.common.util.concurrent.ListenableFuture;
 import io.vertx.core.AsyncResult;
@@ -6,6 +6,7 @@ import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 
 import static com.billyyccc.utils.AsyncUtils.*;
+
 
 /**
  * A client running in the context of Vert.x, this client is a wrapper of the DummyClient.

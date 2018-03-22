@@ -1,4 +1,4 @@
-package com.billyyccc.experiments.guava.demo;
+package com.billyyccc.experiments;
 
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
@@ -15,7 +15,7 @@ public class Launcher {
     Vertx vertx = Vertx.vertx(vertxOptions);
 
     // Deploy the TestVerticle
-    vertx.deployVerticle("com.billyyccc.experiments.guava.demo.TestVerticle",
+    vertx.deployVerticle("com.billyyccc.experiments.TestVerticle",
       new DeploymentOptions().setInstances(2));
   }
 }
