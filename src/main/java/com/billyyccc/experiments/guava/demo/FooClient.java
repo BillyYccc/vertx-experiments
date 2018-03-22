@@ -1,15 +1,16 @@
 package com.billyyccc.experiments.guava.demo;
 
-import com.billyyccc.utils.AsyncUtils;
 import com.google.common.util.concurrent.ListenableFuture;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 
+import static com.billyyccc.utils.AsyncUtils.*;
+
 /**
+ * A client running in the context of Vert.x, this client is a wrapper of the DummyClient.
+ *
  * @author Billy Yuan <billy112487983@gmail.com>
- * <p>
- * a client running in the context of Vert.x, this client is a wrapper of the DummyClient.
  */
 
 public class FooClient {
@@ -28,12 +29,7 @@ public class FooClient {
     DummyClient dummyClient = new DummyClient();
     ListenableFuture<String> listenableFuture = dummyClient.asyncCallWithResults();
 
-    vertx.runOnContext(v -> {
-      // non-blocking handler
-      handler.handle(AsyncUtils.convertToVertxFutureGracefully(listenableFuture));
-//      AsyncUtils.convertToVertxFutureGracefully(listenableFuture).setHandler(handler);
-      System.out.println("The running Context is " + Vertx.currentContext());
-    });
+    runOnContext(vertx, listenableFuture, handler);
 
     System.out.println("Current Thread is " + Thread.currentThread().getName());
   }
