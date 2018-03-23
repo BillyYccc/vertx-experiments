@@ -17,6 +17,7 @@ bin/
 gen/
 out/
 build/
+target/
 
 # Visual Studio Code
 .classpath
