@@ -10,6 +10,7 @@
 
   <properties>
     <vertx.version>3.5.1</vertx.version>
+    <generated.dir>${project.basedir}/src/main/generated</generated.dir>
   </properties>
 
   <dependencies>
@@ -76,9 +77,48 @@
                 <annotationProcessors>
                   <annotationProcessor>io.vertx.codegen.CodeGenProcessor</annotationProcessor>
                 </annotationProcessors>
+                <generatedSourcesDirectory>
+                  ${generated.dir}
+                </generatedSourcesDirectory>
                 <outputDirectory>
                   ${project.basedir}/src/main
                 </outputDirectory>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>default-clean</id>
+              <configuration>
+                <filesets>
+                  <fileset>
+                    <directory>${generated.dir}</directory>
+                  </fileset>
+                </filesets>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>3.0.0</version>
+          <executions>
+            <execution>
+              <id>add-source</id>
+              <phase>generate-sources</phase>
+              <goals>
+                <goal>add-source</goal>
+              </goals>
+              <configuration>
+                <sources>
+                  <source>${generated.dir}</source>
+                </sources>
               </configuration>
             </execution>
           </executions>

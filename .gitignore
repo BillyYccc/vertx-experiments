@@ -42,4 +42,4 @@ target/
 
 # vertx
 .vertx/
-src/main/generated/
+*/src/main/generated/
