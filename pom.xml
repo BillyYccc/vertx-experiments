@@ -13,6 +13,7 @@
   <modules>
     <module>guava-demo</module>
     <module>codegen-demo</module>
+    <module>docgen-demo</module>
   </modules>
 
 </project>
